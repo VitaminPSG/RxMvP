@@ -2,6 +2,8 @@ package com.android.rxmvp.data
 
 import com.android.rxmvp.data.datasources.api.EventService
 import com.android.rxmvp.data.datasources.api.EventServiceImpl
+import com.android.rxmvp.data.datasources.application.AndroidApplicationLifecycle
+import com.android.rxmvp.data.datasources.application.ApplicationLifecycle
 import com.android.rxmvp.data.datasources.credentials.CredentialsProvider
 import com.android.rxmvp.data.datasources.database.DatabaseService
 import com.android.rxmvp.data.datasources.database.DatabaseServiceImpl
@@ -21,6 +23,10 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 val DataModule = module {
+
+    single<ApplicationLifecycle> {
+        AndroidApplicationLifecycle()
+    }
 
     single<CredentialsProvider> {
         object : CredentialsProvider {

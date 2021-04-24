@@ -88,6 +88,8 @@ dependencies {
     implementation(Dependencies.retrofitRxJavaAdapter)
     implementation(Dependencies.retrofitMoshiConverter)
 
+    implementation(Dependencies.lifecycleExtensions)
+
     implementation(Dependencies.moshi)
     kapt(Dependencies.moshiCodegen)
 
